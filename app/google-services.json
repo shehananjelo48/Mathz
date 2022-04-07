@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "111594646185",
+    "project_id": "mathz-c52dc",
+    "storage_bucket": "mathz-c52dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111594646185:android:c96819dbcd34bfb6cd17b8",
+        "android_client_info": {
+          "package_name": "com.sehan.mathz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111594646185-jamutggdu4bont4d8bf93vcm8ahhn5s2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sehan.mathz",
+            "certificate_hash": "0b60fc793f262984c9256e61abc9706e69c6bfc6"
+          }
+        },
+        {
+          "client_id": "111594646185-05q9nild22vpucojc9toh3kjimuo43ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAggoRBydv2oIussjo7E9XlOMBMqhxU7gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111594646185-05q9nild22vpucojc9toh3kjimuo43ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
