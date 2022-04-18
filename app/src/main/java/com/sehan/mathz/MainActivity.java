@@ -19,7 +19,12 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
 
+    private static final String LEVEL = "LEVEL";
     private ImageView Logout;
+    private ImageView Easy;
+    private ImageView Medium;
+    private ImageView Hard;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +32,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Logout = findViewById(R.id.logout);
+        Easy = findViewById(R.id.easyImg);
+        Medium = findViewById(R.id.mediumImg);
+        Hard = findViewById(R.id.hardImg);
 
+        Hard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
+                intent.putExtra(LEVEL,"H");
+                startActivity(intent);
+                finish();
+            }
+        });
+        Medium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
+                intent.putExtra(LEVEL,"M");
+                startActivity(intent);
+                finish();
+            }
+        });
+        Easy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
+                intent.putExtra(LEVEL,"E");
+                startActivity(intent);
+                finish();
+            }
+        });
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
