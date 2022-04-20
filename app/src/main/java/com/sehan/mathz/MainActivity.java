@@ -15,6 +15,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView Easy;
     private ImageView Medium;
     private ImageView Hard;
+    private ImageView Profile;
 
 
     @Override
@@ -35,6 +40,30 @@ public class MainActivity extends AppCompatActivity {
         Easy = findViewById(R.id.easyImg);
         Medium = findViewById(R.id.mediumImg);
         Hard = findViewById(R.id.hardImg);
+        Profile = findViewById(R.id.profileImg);
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null){
+            String uid = currentUser.getUid();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("Users").document(uid).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()){
+                        DocumentSnapshot result = task.getResult();
+                        String  imageUri = (String) result.get("imageUri") ;
+
+                        if (imageUri == null){
+                            Profile.setImageResource(R.drawable.profile1);
+                        } else {
+                            Picasso.get().load(imageUri).into(Profile);
+                        }
+                    }
+                }
+            });
+        }
+
 
         Hard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
                 intent.putExtra(LEVEL,"H");
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
         Medium.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
                 intent.putExtra(LEVEL,"M");
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
         Easy.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Question_Screen.class);
                 intent.putExtra(LEVEL,"E");
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
         Logout.setOnClickListener(new View.OnClickListener() {

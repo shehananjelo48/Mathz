@@ -56,7 +56,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintEnd_toStartOf="@+id/answer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/secondNo"
         app:layout_constraintTop_toTopOf="parent"
@@ -66,7 +66,6 @@
         android:id="@+id/secondNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="789"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -80,7 +79,6 @@
         android:id="@+id/firstNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="148"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -91,12 +89,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="2"
         android:inputType="number"
-        android:text="937"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -104,7 +101,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/nextBtn"

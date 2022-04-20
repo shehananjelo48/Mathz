@@ -1,34 +1,37 @@
 package com.sehan.mathz;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class Question_Screen extends AppCompatActivity {
 
     private static final String FORMAT = "%02d:%02d";
     private static final String LEVEL = "LEVEL";
+    private static final String MARKS = "MARKS";
 
 
     private TextView timer;
     private TextView noOfQuestion;
     private TextView firstNo;
     private TextView secondNo;
+    private EditText answer;
     private String Level;
     private int millisInFuture;
     private int bound;
     private int question ;
+    private int correctMark ;
     private Button nextBtn;
     private CountDownTimer countDownTimer;
     private Random r;
@@ -62,16 +65,19 @@ public class Question_Screen extends AppCompatActivity {
         nextBtn = findViewById(R.id.nextBtn);
         firstNo = findViewById(R.id.firstNo);
         secondNo =  findViewById(R.id.secondNo);
+        answer =  findViewById(R.id.answer);
         noOfQuestion.setText(question+"/10");
         r = new Random();
+        correctMark = 0;
         firstNo.setText(String.valueOf(r.nextInt(bound)));
         secondNo.setText(String.valueOf(r.nextInt(bound)));
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                countDownTimer.onFinish();
+
                 //goNextQuestion();
+                countDownTimer.onFinish();
             }
         });
 
@@ -87,8 +93,25 @@ public class Question_Screen extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                goNextQuestion();
-                Toast.makeText(getApplicationContext(),"Finish",Toast.LENGTH_LONG).show();
+                int x=Integer.parseInt(firstNo.getText().toString());
+                int y=Integer.parseInt(secondNo.getText().toString());
+                if (!answer.getText().toString().isEmpty()) {
+                    if (x + y == Integer.parseInt(answer.getText().toString())) {
+                        correctMark++;
+                    }
+                }
+                if (question==10){
+                    countDownTimer.cancel();
+                    nextBtn.setEnabled(false);
+                    Intent i= new Intent(getApplicationContext(),Scoreboard_Screen.class);
+                    i.putExtra(MARKS,String.valueOf(correctMark));
+                    startActivity(i);
+                    finish();
+//                    Toast.makeText(getApplicationContext(),"Your mark is "+String.valueOf(correctMark),Toast.LENGTH_SHORT).show();
+                }else {
+                    goNextQuestion();
+//                    Toast.makeText(getApplicationContext(), String.valueOf(correctMark), Toast.LENGTH_SHORT).show();
+                }
             }
         }.start();
     }
@@ -96,10 +119,21 @@ public class Question_Screen extends AppCompatActivity {
     private void goNextQuestion() {
         if (question<10) {
             question++;
+            answer.setText("");
             noOfQuestion.setText(question + "/10");
             firstNo.setText(String.valueOf(r.nextInt(bound)));
             secondNo.setText(String.valueOf(r.nextInt(bound)));
             countDownTimer.start();
         }
+        if (question==10){
+            nextBtn.setText("Finish");
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        countDownTimer.cancel();
+//        Toast.makeText(getApplicationContext(),"destroy",Toast.LENGTH_SHORT).show();
     }
 }
