@@ -16,4 +16,9 @@
     <style name="noActionBar" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
+    <style name="profile" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+
+    </style>
 </resources>

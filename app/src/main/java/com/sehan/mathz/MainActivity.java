@@ -118,4 +118,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void goProfile(View v){
+        Intent i = new Intent(getApplicationContext(),View_Profile_Screen.class);
+        startActivity(i);
+    }
 }
