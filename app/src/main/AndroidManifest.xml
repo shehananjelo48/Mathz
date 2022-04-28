@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mathz">
-        <activity android:name=".View_Profile_Screen"
-            android:theme="@style/noActionBar"/>
+        <activity
+            android:name=".Edite_Profile_Screen"
+            android:theme="@style/noActionBar" />
+        <activity
+            android:name=".View_Profile_Screen"
+            android:theme="@style/noActionBar" />
         <activity
             android:name=".Scoreboard_Screen"
             android:theme="@style/noActionBar" />

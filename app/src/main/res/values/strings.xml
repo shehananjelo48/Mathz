@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Mathz</string>
     <string name="todo">TODO</string>
+
+    <string name="profile">Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="change">Change</string>
+    <string name="Age">Age</string>
+    <string name="Phone">Phone Number</string>
 </resources>
