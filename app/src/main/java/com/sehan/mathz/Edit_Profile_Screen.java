@@ -27,7 +27,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class Edite_Profile_Screen extends AppCompatActivity {
+public class Edit_Profile_Screen extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private ProgressBar progressBar;
@@ -46,7 +46,7 @@ public class Edite_Profile_Screen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edite__profile__screen);
+        setContentView(R.layout.activity_edit__profile__screen);
 
         age = findViewById(R.id.age);
         phoneNumber = findViewById(R.id.pNumber);

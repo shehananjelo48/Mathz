@@ -92,7 +92,7 @@ public class View_Profile_Screen extends AppCompatActivity {
 
     }
     public void goEdit(View v){
-        Intent i = new Intent(getApplicationContext(),Edite_Profile_Screen.class);
+        Intent i = new Intent(getApplicationContext(), Edit_Profile_Screen.class);
         startActivity(i);
     }
 }
