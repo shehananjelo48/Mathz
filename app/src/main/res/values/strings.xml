@@ -1,10 +1,37 @@
 <resources>
     <string name="app_name">Mathz</string>
-    <string name="todo">TODO</string>
 
     <string name="profile">Profile</string>
     <string name="full_name">Full Name</string>
     <string name="change">Change</string>
     <string name="Age">Age</string>
     <string name="Phone">Phone Number</string>
+
+    <string name="mathz">Mathz</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="or">Or</string>
+    <string name="lindin">Lindin</string>
+    <string name="google">Google</string>
+    <string name="facebook">FaceBook</string>
+    <string name="twitter">Twitter</string>
+    <string name="not_have_an_account">Do not have an account ? </string>
+    <string name="register_here">Register here</string>
+
+    <string name="registration">Registration</string>
+    <string name="name">Name</string>
+    <string name="create_account">Create Account</string>
+    <string name="have_an_account">Already have an account ? </string>
+    <string name="login_here">Login here</string>
+
+    <string name="next">Next</string>
+    <string name="equal">=</string>
+    <string name="addition">+</string>
+
+    <string name="congratulations">Congratulations !</string>
+    <string name="submit">Submit</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="age">Age</string>
 </resources>

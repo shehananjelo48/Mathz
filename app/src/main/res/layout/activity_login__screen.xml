@@ -19,34 +19,38 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            app:srcCompat="@drawable/icon"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/mathz"
+            app:srcCompat="@drawable/icon" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Login"
-            android:textColor="#000"
-            android:textSize="30dp"
             android:layout_marginTop="30dp"
+            android:text="@string/login"
+            android:textColor="#000"
+            android:textSize="30sp"
             android:textStyle="bold" />
+
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_border"
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:autofillHints="" />
+
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
@@ -58,9 +62,10 @@
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
-            android:padding="15dp" />
+            android:padding="15dp"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -70,7 +75,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_button"
-            android:text="Login"
+            android:text="@string/login"
             android:textAllCaps="false" />
 
         <LinearLayout
@@ -97,7 +102,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:gravity="center"
-                android:text="Or"
+                android:text="@string/or"
                 android:textSize="18sp" />
 
             <View
@@ -123,6 +128,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/lindin"
                 app:srcCompat="@drawable/ic_linkedin" />
 
             <ImageView
@@ -130,6 +136,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/google"
                 app:srcCompat="@drawable/ic_google" />
 
             <ImageView
@@ -137,6 +144,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/facebook"
                 app:srcCompat="@drawable/ic_facebook" />
 
             <ImageView
@@ -144,6 +152,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/twitter"
                 app:srcCompat="@drawable/ic_twitter" />
 
         </LinearLayout>
@@ -163,14 +172,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
-                android:text="Do not have an account ? " />
+                android:text="@string/not_have_an_account" />
 
             <TextView
                 android:id="@+id/registra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="registrarClick"
-                android:text="Register here"
+                android:text="@string/register_here"
                 android:textColor="#011AFB" />
         </LinearLayout>
     </LinearLayout>

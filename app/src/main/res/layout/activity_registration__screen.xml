@@ -14,66 +14,71 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/icon"
-        android:layout_marginTop="20dp"/>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/mathz"
+            app:srcCompat="@drawable/icon" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Registration"
-        android:textColor="#000"
-        android:textSize="30dp"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/registration"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_border"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="@string/name"
             android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:autofillHints="" />
+
         <EditText
             android:id="@+id/etAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_border"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Age"
+            android:hint="@string/Age"
             android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/etPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
+            android:autofillHints=""
             android:background="@drawable/round_border"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Phone Number"
-            android:inputType="textEmailAddress"
+            android:hint="@string/Phone"
+            android:inputType="phone"
             android:padding="15dp"
-            android:layout_marginTop="20dp"
             android:textAllCaps="false" />
 
         <EditText
@@ -81,15 +86,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_border"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -101,10 +107,11 @@
             android:background="@drawable/round_border"
             android:drawablePadding="16dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="15dp"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnRegister"
@@ -114,7 +121,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/round_button"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:textAllCaps="false" />
 
         <LinearLayout
@@ -132,14 +139,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="5dp"
-                android:text="Already have an account ? " />
+                android:text="@string/have_an_account" />
 
             <TextView
                 android:id="@+id/registra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="loginClick"
-                android:text="Login here"
+                android:text="@string/login_here"
                 android:textColor="#011AFB" />
         </LinearLayout>
     </LinearLayout>

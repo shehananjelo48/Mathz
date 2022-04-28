@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,13 +27,14 @@ public class Registration_Screen extends AppCompatActivity {
     private EditText name,Age,PhoneNumber,Email,Password;
     private Button Register;
     String uid_Google;
+    boolean isEmailPasswordLoginEnabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent =getIntent();
-        boolean isEmailPasswordLoginEnabled = intent.getBooleanExtra(EMAIL_PASSWORD_LOGIN, true);
+        isEmailPasswordLoginEnabled = intent.getBooleanExtra(EMAIL_PASSWORD_LOGIN, true);
         uid_Google = intent.getStringExtra(UID);
 
         setContentView(R.layout.activity_registration__screen);
@@ -50,13 +53,54 @@ public class Registration_Screen extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isEmailPasswordLoginEnabled) {
-                    createUserAccount(Email.getText().toString(), Password.getText().toString());
-                }else{
-                    saveUserIntoFirebase(uid_Google);
+                if (Validation()) {
+                    if (isEmailPasswordLoginEnabled) {
+                        createUserAccount(Email.getText().toString(), Password.getText().toString());
+                    } else {
+                        saveUserIntoFirebase(uid_Google);
+                    }
                 }
             }
         });
+    }
+
+    private boolean Validation() {
+        String Email1 = Email.getText().toString();
+        if (!isEmailPasswordLoginEnabled) {
+            if (!Patterns.EMAIL_ADDRESS.matcher(Email1).matches()) {
+                return false;
+            }
+            if (TextUtils.isEmpty(Password.getText().toString())) {
+                return false;
+            }
+            if (!(Password.getText().length() == 6)) {
+                return false;
+            }
+            if (TextUtils.isEmpty(Email.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(Password.getText().toString())) {
+                return false;
+            }
+        } else {
+            if (TextUtils.isEmpty(name.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(name.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(Age.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(PhoneNumber.getText().toString())) {
+                return false;
+            }
+            if (!(PhoneNumber.getText().length() == 10)) {
+                return false;
+            }
+
+        }
+        return true;
     }
 
     private void createUserAccount(String email, String password) {
