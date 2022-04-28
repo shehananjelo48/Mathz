@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,9 +62,11 @@ public class Login_Screen extends AppCompatActivity {
          loginBtn.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 String userEmail = email.getText().toString();
-                 String userPassword = password.getText().toString();
-                 doLogin(userEmail,userPassword);
+                 if (isValidate()) {
+                     String userEmail = email.getText().toString();
+                     String userPassword = password.getText().toString();
+                     doLogin(userEmail, userPassword);
+                 }
              }
          });
 
@@ -72,6 +76,18 @@ public class Login_Screen extends AppCompatActivity {
                  continuWithGoogle();
              }
          });
+    }
+
+    private boolean isValidate() {
+        String Email = email.getText().toString().trim();
+        if (!Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
+            return false;
+        }if (TextUtils.isEmpty(email.getText().toString())){
+            return false;
+        }if (TextUtils.isEmpty(password.getText().toString())){
+            return false;
+        }
+        return true;
     }
 
     @Override
