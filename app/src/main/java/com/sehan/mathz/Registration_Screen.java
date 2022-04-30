@@ -59,6 +59,8 @@ public class Registration_Screen extends AppCompatActivity {
                     } else {
                         saveUserIntoFirebase(uid_Google);
                     }
+                }else {
+                    Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -80,6 +82,18 @@ public class Registration_Screen extends AppCompatActivity {
                 return false;
             }
             if (TextUtils.isEmpty(Password.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(name.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(Age.getText().toString())) {
+                return false;
+            }
+            if (TextUtils.isEmpty(PhoneNumber.getText().toString())) {
+                return false;
+            }
+            if (!(PhoneNumber.getText().length() == 10)) {
                 return false;
             }
         } else {

@@ -66,6 +66,8 @@ public class Login_Screen extends AppCompatActivity {
                      String userEmail = email.getText().toString();
                      String userPassword = password.getText().toString();
                      doLogin(userEmail, userPassword);
+                 }else {
+                     Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
                  }
              }
          });
